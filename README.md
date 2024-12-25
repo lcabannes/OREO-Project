@@ -32,9 +32,7 @@ cd [PATH_TO_THIS_REPO]
 pip install -e .
 ```
 
-Training data can be downloaded from **TODO**.
-
-The OREO fine-tuned checkpoint of `Qwen2.5-Math-1.5B` can be found **TODO**.
+As the data collection process involves randomness, we will publish the training data used in our experiments in the near future.
 
 # Reproduction
 ## Training
