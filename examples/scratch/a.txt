@@ -1,0 +1,15 @@
+[BOS] 0 0 0 1 1 2 2 2 [EOS]
+    0 0 0 1 0 1 0 0 0     0  --- state mask
+    0 0 0 0 1 1 1 1 1     1  --- action mask
+    0 1 2 3 4 5 6 7 8     9
+          5   0
+
+
+[BOS] s s s a a s s a a a [EOS]
+      0 0 1 0 0 0 1 0 0 0     0
+      0 0 0 1 1 0 0 1 1 1     1
+
+
+[BOS] s s s a a s s a a a [EOS]
+      0 0 1 1 0 0 1 1 1 1     0
+      0 0 0 1 1 0 0 1 1 1     1
