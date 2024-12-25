@@ -1,10 +1,11 @@
-# Offline Reinforcement Learning for LLM Multi-Step Reasoning
+# OREO: Offline REasoning Optimization
 
 Source code for [Offline Reinforcement Learning for LLM Multi-Step Reasoning](https://arxiv.org/abs/2412.16145)
 
 Model: [Policy](https://huggingface.co/jwhj/Qwen2.5-Math-1.5B-OREO) | [Value](https://huggingface.co/jwhj/Qwen2.5-Math-1.5B-OREO-Value)
 
-![Image goes here](./OREO.png)
+<img src="./OREO.png" alt="Image description" width="50%" />
+
 
 # Installation
 
@@ -110,3 +111,13 @@ cd example/scripts
 python ../scratch/run_alfworld_async.py --model [PATH_TO_YOUR_MODEL] --save_dir [SAVE_GENERATED_TRAJS]
 ```
 You can use `--split eval_in_distribution` for seen environments.
+
+## Reference
+```bibtex
+@inproceedings{Wang2024OfflineRL,
+  title={Offline Reinforcement Learning for LLM Multi-Step Reasoning},
+  author={Huaijie Wang and Shibo Hao and Hanze Dong and Shenao Zhang and Yilin Bao and Ziran Yang and Yi Wu},
+  year={2024},
+  url={https://api.semanticscholar.org/CorpusID:274965107}
+}
+```
