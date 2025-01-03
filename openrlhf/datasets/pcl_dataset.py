@@ -38,9 +38,9 @@ class PCLDataset(Dataset):
 
     def load_data(self, split: str, train_file: Optional[str] = None):
         if split == "train":
-            filepath = "/mnt/shared/annotated/train-n5-t1.jsonl" if train_file is None else train_file
+            filepath = "/home/OREO-Project/train-qwen.jsonl" if train_file is None else train_file
         else:
-            filepath = "/mnt/shared/annotated/test.jsonl" if train_file is None else train_file
+            filepath = "/home/OREO-Project/test-qwen.jsonl" # if train_file is None else train_file
         self.data = []
         with open(filepath, "r") as f:
             for line in f.readlines():
@@ -85,7 +85,19 @@ class PCLDataset(Dataset):
         action_mask = torch.zeros_like(ids)
         if not self.step_level:
             # TODO: this are masks for token-wise PCL
+
             idx = input_token.char_to_token(len(prompt))  # first token pos of response
+            if idx is None:
+                prompt_token = self.tokenizer(
+                    prompt,
+                    padding=False,
+                    return_tensors="pt",
+                )["input_ids"]              
+                print(f"prompt too long")
+                print(f"prompt token shape: {prompt_token.shape}")
+                print(f"output length: {len(input_token)}")
+                # idx = ids.shape[-1]
+
             state_mask[0][idx - 1 : -1] = 1
             action_mask[0][idx:] = 1
         else:

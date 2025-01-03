@@ -70,6 +70,7 @@ class Actor(nn.Module):
 
             # LoRA
             if lora_rank > 0:
+                print(f"using peft model")
                 # https://github.com/huggingface/peft/issues/137
                 self.model.enable_input_require_grads()
                 lora_config = LoraConfig(
@@ -82,6 +83,8 @@ class Actor(nn.Module):
                 )
                 self.model = get_peft_model(self.model, lora_config)
 
+
+
                 if load_in_4bit:
                     for name, module in self.model.named_modules():
                         if isinstance(module, LoraLayer):
@@ -91,6 +94,20 @@ class Actor(nn.Module):
                         if "lm_head" in name or "embed_tokens" in name:
                             if hasattr(module, "weight"):
                                 module = module.to(torch.bfloat16)
+            else:
+                print(f"not using peft model")
+            print(f"lora rank: {lora_rank}")
+            
+            total_params = 0
+            trainable_params = 0
+            for name, param, in self.model.named_parameters():
+                total_params += param.numel()
+                if param.requires_grad:
+                    trainable_params += param.numel()
+            print(f"""total params: {total_params}
+            trainable params: {trainable_params}
+            {trainable_params / total_params *100}%
+            """)
 
             # MoE - balancing loss
             model_config = self.model.config.to_dict()

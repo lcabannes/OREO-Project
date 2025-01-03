@@ -4,6 +4,7 @@ import os
 from collections import OrderedDict
 from copy import deepcopy
 from datetime import datetime
+import torch
 
 from transformers.trainer import get_scheduler
 
@@ -34,6 +35,8 @@ def train(args):
     #     target_modules=args.target_modules,
     #     ds_config=strategy.get_ds_train_config(is_actor=True),
     # )
+    print(f"only critic: {args.only_critic_lora}")
+    print(f"lora rank: {args.lora_rank}")
     model = Actor(
         args.load_actor,
         use_flash_attention_2=args.flash_attn,
@@ -44,7 +47,10 @@ def train(args):
         lora_dropout=args.lora_dropout,
         target_modules=args.target_modules,
         ds_config=strategy.get_ds_train_config(is_actor=True),
+        device_map="cpu" # lcabannes added this
     )
+    torch.cuda.synchronize()
+    print(f"LOADING CRITIC")
     critic = get_llm_for_sequence_regression(
         args.pretrain if args.load_critic is None else args.load_critic,
         "critic",
@@ -58,7 +64,12 @@ def train(args):
         target_modules=args.target_modules,
         ds_config=strategy.get_ds_train_config(is_actor=True),
         zero_init_value_head=args.load_critic is None,
+        device_map="cpu",
     )
+    torch.cuda.synchronize()
+    print(f"CRITIC LOADED")
+    import time
+    time.sleep(3)
     if args.load_critic_adapter is not None:
         critic.load_adapter(args.load_critic_adapter, "default")
     if args.enable_ema:
@@ -89,6 +100,7 @@ def train(args):
         bf16=args.bf16,
         load_in_4bit=args.load_in_4bit,
         ds_config=strategy.get_ds_eval_config(offload=args.ref_offload),
+        # device_map="cuda",
     )
     if args.ref_offload:
         ref_model._offload = True

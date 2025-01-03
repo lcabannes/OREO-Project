@@ -122,6 +122,7 @@ def get_llm_for_sequence_regression(
 
     # LoRA
     if lora_rank > 0:
+        print(f"CRITIC IS PEFT")
         model.enable_input_require_grads()
         lora_config = LoraConfig(
             r=lora_rank,
@@ -141,6 +142,8 @@ def get_llm_for_sequence_regression(
                 if "value_head" in name or "embed_tokens" in name:
                     if hasattr(module, "weight"):
                         module = module.to(torch.bfloat16)
+    else:
+        print("CRITIC ISN'T PEFT")
 
     # MoE - balancing loss
     model_config = model.config.to_dict()
