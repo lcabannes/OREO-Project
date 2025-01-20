@@ -1,17 +1,17 @@
 set -x 
 
 read -r -d '' training_commands <<EOF
-../train_dpo.py \
-     --save_path ./ckpt/7b_llama \
+/home/OREO-Project/examples/train_dpo.py \
+     --save_path /home/OREO-Project/data/ckpt/SmolLM-dpo/ \
      --save_steps -1 \
      --logging_steps 1 \
      --eval_steps -1 \
      --train_batch_size 128 \
-     --micro_train_batch_size 1 \
-     --pretrain OpenLLMAI/Llama-2-13b-sft-model-ocra-500k \
+     --micro_train_batch_size 4 \
+     --pretrain HuggingFaceTB/SmolLM-360M-Instruct \
      --bf16 \
-     --max_epochs 1 \
-     --max_len 2048 \
+     --max_epochs 2 \
+     --max_len 2560 \
      --zero_stage 3 \
      --beta 0.1 \
      --learning_rate 5e-7 \

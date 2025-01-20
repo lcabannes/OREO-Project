@@ -90,7 +90,7 @@ def select_states(
                 else:
                     candidates.append((next_state["text"], value))
             else:
-                candidates.append((next_state["text"] + next_state["stop_reason"], value))
+                candidates.append((next_state["text"] + str(next_state["stop_reason"]), value))
 
         if len(candidates) > 0:
             flag = True
@@ -122,38 +122,45 @@ def beam_search(a: LLM, tokenizer: PreTrainedTokenizer, critic, prompts: List[st
 
 def main():
     if args.data == "GSM8K":
-        d = load_dataset("openai/gsm8k", "main")[args.split]
+        print(f"chose GSM8K")
+        d = load_dataset("openai/gsm8k", "main")[args.split].select(range(300))
         extract_answer = extract_last_single_answer
         eval_answer = eval_last_single_answer
         input_key = "question"
         output_key = "answer"
     else:
-        d = load_dataset("hendrycks/competition_math")[args.split]
+        print(f"chose MATH")
+        d = load_dataset("hendrycks/competition_math")[args.split].select(range(300))
         extract_answer = extract_math_answer
         eval_answer = eval_math
         input_key = "problem"
         output_key = "solution"
 
-    model_path = "/mnt/data/ckpt/pcl/qwen_full_lr5e-6_beta0-03_rew01_actor-loss-dro_kl-reg-unbiased1e-2_plot-weights"
+    model_path = "/home/OREO-Project/data/pretrained/Qwen2.5-Math-1.5B-OREO/"
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     tokenizer.padding_side = "left"
     tokenizer.pad_token = tokenizer.eos_token
     critic = get_llm_for_sequence_regression(
-        model_path + "_critic",
+        model_path + "_critic", # "Qwen/Qwen2.5-Math-1.5B-Instruct", # "data/pretrained/Qwen2.5-Math-1.5B-OREO/_critic/",  # 
         "critic",
         normalize_reward=False,  # TODO: maybe experiment with this layer
         use_flash_attention_2=True,
         bf16=True,
         load_in_4bit=False,
-        lora_rank=64,
+        lora_rank=64, # 64,
         lora_alpha=64,
         lora_dropout=0,
         target_modules="all-linear",
+        zero_init_value_head=True,
         # ds_config=strategy.get_ds_train_config(is_actor=True),
     )
     critic.to(torch.cuda.current_device())
+    # critic.load_adapter(model_path + "_lora_critic", "default")
     critic.eval()
-    a = LLM(model_path, gpu_memory_utilization=0.3)
+
+    model_path = "data/ckpt/Qwen-math-oreo/_merged/"
+    model_path = "Qwen/Qwen2.5-Math-1.5B-Instruct"
+    a = LLM(model_path, gpu_memory_utilization=0.5)
 
     questions = [d[i][input_key] for i in range(len(d))]
     # prompts = [chat_template.format(x + template) for x in questions]

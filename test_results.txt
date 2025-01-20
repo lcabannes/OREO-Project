@@ -1,0 +1,89 @@
+[2025-01-06 00:48:35,560] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose MATH
+CRITIC IS PEFT
+INFO 01-06 00:48:38 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 00:48:39 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 00:48:39 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 00:48:40 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 00:48:40 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 00:48:43 model_runner.py:924] Graph capturing finished in 3 secs.
+37 / 300
+[2025-01-06 00:53:16,742] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose MATH
+CRITIC IS PEFT
+INFO 01-06 00:53:19 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 00:53:19 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 00:53:20 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 00:53:21 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 00:53:21 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 00:53:25 model_runner.py:924] Graph capturing finished in 3 secs.
+70 / 300
+[2025-01-06 01:07:13,793] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose MATH
+CRITIC IS PEFT
+INFO 01-06 01:07:16 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 01:07:17 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 01:07:17 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 01:07:18 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 01:07:18 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 01:07:21 model_runner.py:924] Graph capturing finished in 3 secs.
+72 / 300
+[2025-01-06 01:38:39,614] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose MATH
+CRITIC IS PEFT
+INFO 01-06 01:38:42 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 01:38:43 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 01:38:43 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 01:38:44 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 01:38:44 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 01:38:47 model_runner.py:924] Graph capturing finished in 3 secs.
+113 / 300
+[2025-01-06 04:21:02,307] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose GSM8K
+CRITIC IS PEFT
+INFO 01-06 04:21:06 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 04:21:07 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 04:21:07 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 04:21:08 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 04:21:08 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 04:21:11 model_runner.py:924] Graph capturing finished in 3 secs.
+123 / 300
+[2025-01-06 04:25:28,906] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose GSM8K
+CRITIC IS PEFT
+INFO 01-06 04:25:32 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 04:25:33 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 04:25:33 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 04:25:35 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 04:25:35 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 04:25:38 model_runner.py:924] Graph capturing finished in 3 secs.
+167 / 300
+[2025-01-06 04:40:46,148] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose GSM8K
+CRITIC IS PEFT
+INFO 01-06 04:40:50 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 04:40:51 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 04:40:51 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 04:40:53 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 04:40:53 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 04:40:55 model_runner.py:924] Graph capturing finished in 3 secs.
+176 / 300
+[2025-01-06 05:14:15,068] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose GSM8K
+CRITIC IS PEFT
+INFO 01-06 05:14:19 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 05:14:20 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 05:14:20 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 05:14:21 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 05:14:21 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 05:14:24 model_runner.py:924] Graph capturing finished in 3 secs.
+191 / 300
+[2025-01-06 08:17:32,051] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+chose GSM8K
+CRITIC IS PEFT
+INFO 01-06 08:17:35 llm_engine.py:161] Initializing an LLM engine (v0.4.3) with config: model='data/ckpt/Qwen-math-oreo/_merged/', speculative_config=None, tokenizer='data/ckpt/Qwen-math-oreo/_merged/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=data/ckpt/Qwen-math-oreo/_merged/)
+INFO 01-06 08:17:36 model_runner.py:146] Loading model weights took 2.8797 GB
+INFO 01-06 08:17:36 gpu_executor.py:83] # GPU blocks: 17063, # CPU blocks: 9362
+INFO 01-06 08:17:38 model_runner.py:854] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 01-06 08:17:38 model_runner.py:858] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 01-06 08:17:41 model_runner.py:924] Graph capturing finished in 3 secs.

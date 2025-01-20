@@ -1,0 +1,10 @@
+python3 examples/scratch/batch_sbs_qwen.py --data MATH --K 1 --split test --save math-instruct-oreo2epochs-K1.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data MATH --K 2 --split test --save math-instruct-oreo2epochs-K2.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data MATH --K 3 --split test --save math-instruct-oreo2epochs-K3.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data MATH --K 7 --split test --save math-instruct-oreo2epochs-K7.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data GSM8K --K 1 --split test --save gsm8k-instruct-oreo2epochs-K1.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data GSM8K --K 2 --split test --save gsm8k-instruct-oreo2epochs-K2.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data GSM8K --K 3 --split test --save gsm8k-instruct-oreo2epochs-K3.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data GSM8K --K 7 --split test --save gsm8k-instruct-oreo2epochs-K7.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data GSM8K --K 10 --split test --save gsm8k-instruct-oreo2epochs-K10.jsonl
+python3 examples/scratch/batch_sbs_qwen.py --data MATH --K 10 --split test --save math-instruct-oreo2epochs-K10.jsonl

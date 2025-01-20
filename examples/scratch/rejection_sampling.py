@@ -2,8 +2,8 @@ import json
 import random
 
 name = "dsm-b2"
-with open(f"/mnt/shared/annotated/train-{name}.jsonl", "r") as f:
-    with open(f"/mnt/shared/annotated/train-{name}-filtered.jsonl", "w") as f_out:
+with open(f"test-qwen.jsonl", "r") as f:
+    with open(f"filtered_test-qwen.jsonl", "w") as f_out:
         results = []
         for line in f.readlines():
             tmp = json.loads(line)

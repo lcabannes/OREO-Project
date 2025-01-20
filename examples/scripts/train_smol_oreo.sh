@@ -2,23 +2,21 @@ set -x
 
 read -r -d '' training_commands <<EOF
 /home/OREO-Project/examples/train_pcl.py \
-     --save_path /home/OREO-Project/data/ckpt/Qwen-math-oreo/ \
+     --save_path /home/OREO-Project/data/ckpt/SmolLM-360m-full-oreo \
      --save_steps -1 \
      --logging_steps 1 \
      --eval_steps -1 \
      --train_batch_size 128 \
-     --micro_train_batch_size 1 \
-     --pretrain Qwen/Qwen2.5-Math-1.5B-Instruct \
+     --micro_train_batch_size 4 \
+     --pretrain HuggingFaceTB/SmolLM-360M-Instruct \
      --bf16 \
-     --max_epochs 2 \
-     --ref_offload \
-     --max_len 1750 \
+     --max_epochs 3 \
+     --max_len 2560 \
      --zero_stage 2 \
      --beta 0.03 \
      --learning_rate 5e-6 \
      --critic_learning_rate 5e-6 \
      --adam_offload \
-     --lora_rank 124 \
      --flash_attn \
      --gradient_checkpointing \
      --dro_actor_loss \
@@ -31,9 +29,13 @@ read -r -d '' training_commands <<EOF
      --train_file /home/OREO-Project/train-qwen.jsonl \
      --use_wandb True \
      --wandb_project oreo \
-     --wandb_run_name Qwen2.5-Math-1.5B \
+     --wandb_run_name smolLM-360m-instruct \
 
 EOF
+     # --pretrain Qwen/Qwen2.5-Math-1.5B-Instruct \
+     # --lora_rank 64 \
+     # --ref_offload \
+     # --wandb_run_name Qwen2.5-Math-1.5B \
      # --wandb [WANDB_TOKENS] or True (use wandb login command)
      # --ipo [for IPO]
      # --label_smoothing 0.1 [for cDPO]

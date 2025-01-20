@@ -21,7 +21,7 @@ def load_queries(dataset: Dataset, input_key: str, output_key: str, extract_func
 
 
 def main():
-    a = LLM(args.model, gpu_memory_utilization=0.5)
+    a = LLM(args.model, gpu_memory_utilization=0.8)
     if not args.sample:
         params = SamplingParams(args.n, stop=None, temperature=args.temperature, max_tokens=2048)
     else:

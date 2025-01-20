@@ -104,10 +104,11 @@ class Actor(nn.Module):
                 total_params += param.numel()
                 if param.requires_grad:
                     trainable_params += param.numel()
-            print(f"""total params: {total_params}
-            trainable params: {trainable_params}
-            {trainable_params / total_params *100}%
-            """)
+            if trainable_params > 0:
+                print(f"""total params: {total_params}
+                trainable params: {trainable_params}
+                {trainable_params / total_params *100}%
+                """)
 
             # MoE - balancing loss
             model_config = self.model.config.to_dict()

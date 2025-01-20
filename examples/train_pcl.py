@@ -47,7 +47,7 @@ def train(args):
         lora_dropout=args.lora_dropout,
         target_modules=args.target_modules,
         ds_config=strategy.get_ds_train_config(is_actor=True),
-        device_map="cpu" # lcabannes added this
+        device_map="cuda" # lcabannes added this
     )
     torch.cuda.synchronize()
     print(f"LOADING CRITIC")
@@ -64,7 +64,7 @@ def train(args):
         target_modules=args.target_modules,
         ds_config=strategy.get_ds_train_config(is_actor=True),
         zero_init_value_head=args.load_critic is None,
-        device_map="cpu",
+        device_map="cuda",
     )
     torch.cuda.synchronize()
     print(f"CRITIC LOADED")
@@ -100,7 +100,7 @@ def train(args):
         bf16=args.bf16,
         load_in_4bit=args.load_in_4bit,
         ds_config=strategy.get_ds_eval_config(offload=args.ref_offload),
-        # device_map="cuda",
+        device_map="cuda",
     )
     if args.ref_offload:
         ref_model._offload = True
@@ -183,6 +183,14 @@ def train(args):
     (model, optim, scheduler), (critic, critic_optim, critic_scheduler), ref_model = strategy.prepare(
         (model, optim, scheduler), (critic, critic_optim, critic_scheduler), ref_model
     )
+
+    for param_id, state in optim.state.items():
+        print(f"parameter ID: {param_id}")
+        for key, value in state.items():
+            if isinstance(value, torch.Tensor):
+                print(f"key: {key.shape} device: {value.device}")
+
+
     # TODO: there is a parameter "is_rlhf" in PPO impl, figure out what it does
     if ema_model is not None:
         ema_model._offload = True
